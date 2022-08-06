@@ -41,7 +41,7 @@ exports.login = async (username, password) => {
     const match = await bcrypt.compare(password, user.password);
 
     if (!match) {
-        throw new Error('Incorrect email or password');
+        throw new Error('Incorrect username or password');
     }
 
     return createSession(user);
